@@ -1,0 +1,27 @@
+{
+  "editor.formatOnSave": false,
+  "editor.rulers": [80],
+  "eslint.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[md]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": [
+    "Serializers",
+    "automock",
+    "commitlint",
+    "execa",
+    "gitattributes",
+    "lcov",
+    "shas",
+    "unmocked"
+  ]
+}
