@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --config .eslintrc \"./**/*.js\"",
-    "lint:fix": "eslint --config .eslintrc --debug --fix \"./**/*.js\"",
+    "lint:fix": "eslint --config .eslintrc --fix \"./**/*.js\"",
     "lint-staged": "npm run lint-staged",
     "release": "standard-version"
   },
