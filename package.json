@@ -37,8 +37,8 @@
     "url": "https://github.com/ert78gb/git-utils"
   },
   "dependencies": {
-    "execa": "^5.0.0",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "execa": "^5.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
