@@ -97,6 +97,45 @@ console.log(sha) // dd064f731ce78a1dd64c41781c8bb01cfda9a6d8
 | ---------------- | ------------- | -------------------------------------------------------------- |
 | cwd (string)     | inherited     | Path of the git repository. Inherited from the Node.js context |
 
+## Get File Changes
+
+All commit info of a file path.
+The array is ordered by commit date in descending order.
+
+```javascript
+const { getFileChanges } = require('@ert78gb/git-utils')
+
+// Equivalent git command
+// git log --follow --no-decorate --date=iso8601-strict -- file-path
+const commitInfos = await getFileChanges({
+  cwd: 'path of the git repo',
+  path: 'folder/file.path'
+})
+
+console.log(commitInfos)
+// [
+//   {
+//    sha: 'd3e89505291cb1d5881c6033d2ffd0abfc68fe10',
+//    author: 'Committer',
+//    date: 2021-02-08T16:19:42.000Z, // Commit date as Date
+//    message: 'fix: modify file'
+//   },
+//   {
+//    sha: '7f15cc49347592fbd60ea839f7e06be553965234',
+//    author: 'Committer',
+//    date: 2020-02-08T16:19:42.000Z, // Commit date as Date
+//    message: 'feat: create file'
+//   }
+// ]
+```
+
+#### Options
+
+| parameter (type) | default value | description                                                    |
+| ---------------- | ------------- | -------------------------------------------------------------- |
+| cwd (string)     | inherited     | Path of the git repository. Inherited from the Node.js context |
+| path (string)    |               | The path of the file from the repository root                  |
+
 ## Get Commit Info
 
 The latest commit info.
@@ -147,7 +186,7 @@ const { getParentShas } = require('@ert78gb/git-utils')
 // Equivalent git command
 // git log --pretty=%P -1 7f15cc49347592fbd60ea839f7e06be553965234
 const shas = await getCommitInfo({
-  sha: '7f15cc49347592fbd60ea839f7e06be553965234'
+  sha: '7f15cc49347592fbd60ea839f7e06be553965234',
   cwd: 'path of the git repo',
 })
 
@@ -172,8 +211,8 @@ const { getMergeBase } = require('@ert78gb/git-utils')
 // git merge-base 7f15cc49347592fbd60ea839f7e06be553965234 cde7266d8004b1391ce033fd86f0ffe4a1ce1793
 // git merge-base master feature-branch-name
 const sha = await getMergeBase({
-  sha1: '7f15cc49347592fbd60ea839f7e06be553965234'
-  sha2: 'cde7266d8004b1391ce033fd86f0ffe4a1ce1793'
+  sha1: '7f15cc49347592fbd60ea839f7e06be553965234',
+  sha2: 'cde7266d8004b1391ce033fd86f0ffe4a1ce1793',
   cwd: 'path of the git repo',
 })
 
@@ -199,8 +238,8 @@ const { getChangedFiles } = require('@ert78gb/git-utils')
 // git diff --name-status 7f15cc49347592fbd60ea839f7e06be553965234 cde7266d8004b1391ce033fd86f0ffe4a1ce1793
 // git dif --name-status master feature-branch-name
 const changedFiles = await getChangedFiles({
-  sha1: '7f15cc49347592fbd60ea839f7e06be553965234'
-  sha2: 'cde7266d8004b1391ce033fd86f0ffe4a1ce1793'
+  sha1: '7f15cc49347592fbd60ea839f7e06be553965234',
+  sha2: 'cde7266d8004b1391ce033fd86f0ffe4a1ce1793',
   cwd: 'path of the git repo',
 })
 
