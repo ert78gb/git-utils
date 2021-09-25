@@ -128,7 +128,7 @@ module.exports = {
   // ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
-  runner: 'jest-serial-runner',
+  runner: './test/util/serial-runner.js',
 
   testSequencer: './test/util/test-sequencer.js',
   // The paths to modules that run some code to configure or set up the testing environment before each test
