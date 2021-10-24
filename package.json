@@ -44,7 +44,7 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "dotenv": "^10.0.0",
-    "eslint": "^7.19.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-jest": "^25.2.2",
     "eslint-plugin-prettier": "^4.0.0",
